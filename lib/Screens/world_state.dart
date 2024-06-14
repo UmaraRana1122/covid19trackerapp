@@ -17,6 +17,7 @@ class _WorldStateScreenState extends State<WorldStateScreen>
   void initState() {
     // TODO: implement initState
     super.initState();
+    controller.dispose();
   }
 
   final colorList = [Colors.red, Colors.blue, Colors.green];
@@ -30,6 +31,9 @@ class _WorldStateScreenState extends State<WorldStateScreen>
           padding: EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 5),
           child: Column(
             children: [
+              SizedBox(
+                height: MediaQuery.of(context).size.height * .04,
+              ),
               PieChart(
                 chartRadius: MediaQuery.of(context).size.width / 3.2,
                 legendOptions:
@@ -43,7 +47,9 @@ class _WorldStateScreenState extends State<WorldStateScreen>
                 chartType: ChartType.ring,
                 colorList: colorList,
               ),
-              SizedBox(height: 15),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * .04,
+              ),
               Card(
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -56,7 +62,9 @@ class _WorldStateScreenState extends State<WorldStateScreen>
                   ),
                 ),
               ),
-              SizedBox(height: 15),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * .04,
+              ),
               Container(
                 height: 50,
                 decoration: BoxDecoration(

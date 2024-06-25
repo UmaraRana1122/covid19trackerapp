@@ -1,3 +1,4 @@
+import 'package:covid19trackerapp/Screens/countries_list_screen.dart';
 import 'package:covid19trackerapp/Screens/splash_screen.dart';
 import 'package:covid19trackerapp/Screens/world_state.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: WorldStateScreen(),
+      home: CountriesListScreen(),
     );
   }
 }

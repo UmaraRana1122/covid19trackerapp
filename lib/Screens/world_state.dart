@@ -112,6 +112,9 @@ class _WorldStateScreenState extends State<WorldStateScreen>
                                       value:
                                           snapshot.data!.critical.toString()),
                                   ResusableRow(
+                                      title: "Tests",
+                                      value: snapshot.data!.tests.toString()),
+                                  ResusableRow(
                                       title: "Deaths Per Day",
                                       value: snapshot.data!.todayDeaths
                                           .toString()),
@@ -165,7 +168,7 @@ class _WorldStateScreenState extends State<WorldStateScreen>
 
 class ResusableRow extends StatelessWidget {
   final String title, value;
-  ResusableRow({super.key, required this.title, required this.value});
+  const ResusableRow({super.key, required this.title, required this.value});
 
   @override
   Widget build(BuildContext context) {

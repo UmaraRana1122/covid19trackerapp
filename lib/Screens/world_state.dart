@@ -1,4 +1,5 @@
 import 'package:covid19trackerapp/Model/worl_state_model.dart';
+import 'package:covid19trackerapp/Screens/countries_list_screen.dart';
 import 'package:covid19trackerapp/Services/state_services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -34,6 +35,10 @@ class _WorldStateScreenState extends State<WorldStateScreen>
   Widget build(BuildContext context) {
     StateServices stateServices = StateServices();
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Word States'),
+        centerTitle: true,
+      ),
       // backgroundColor: Color(0xff272726),
       body: SafeArea(
         child: Padding(
@@ -133,18 +138,27 @@ class _WorldStateScreenState extends State<WorldStateScreen>
                           SizedBox(
                             height: MediaQuery.of(context).size.height * .04,
                           ),
-                          Container(
-                            height: 50,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(8),
-                                color: Colors.green),
-                            child: Center(
-                                child: Text(
-                              "Track Countries",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.white),
-                            )),
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          CountriesListScreen()));
+                            },
+                            child: Container(
+                              height: 50,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(8),
+                                  color: Colors.green),
+                              child: Center(
+                                  child: Text(
+                                "Track Countries",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.white),
+                              )),
+                            ),
                           )
                         ],
                       ),
